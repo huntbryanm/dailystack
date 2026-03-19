@@ -235,7 +235,7 @@ function Landing({onStart, onUpgrade, isPro, user, onSignIn, onSignOut}) {
           ))}
         </div>
       </div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:1,background:"rgba(255,255,255,0.04)",borderTop:"1px solid rgba(255,255,255,0.06)",position:"relative",zIndex:2}}>
+      <div className="ds-features" style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:1,background:"rgba(255,255,255,0.04)",borderTop:"1px solid rgba(255,255,255,0.06)",position:"relative",zIndex:2}}>
         {[{icon:"◉",title:"100% Meter",desc:"Habits AND tasks feed one progress bar per day"},{icon:"⟳",title:"Daily Habits",desc:"Recurring activities that repeat every day automatically"},{icon:"☑",title:"One-Off Tasks",desc:"Add tasks to specific days and cross them off when done"},{icon:"☁",title:"Cloud Sync",desc:"Sign in with Google — your data follows you everywhere"}].map((f,i)=>(
           <div key={i} style={{padding:"32px 28px",background:"rgba(7,9,15,0.8)",...t(1.0+i*0.1)}}>
             <div style={{fontSize:22,marginBottom:10,color:"#f59e0b"}}>{f.icon}</div>
@@ -425,7 +425,7 @@ export default function App() {
         {showTemplates&&(
           <div style={{marginBottom:28}}>
             <h2 style={{...mc(),fontSize:12,fontWeight:600,letterSpacing:"1.5px",textTransform:"uppercase",marginBottom:14}}>Choose your template</h2>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:12}}>
+            <div className="ds-templates" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:12}}>
               {Object.entries(TEMPLATES).map(([key,t])=>(
                 <button key={key} onClick={()=>applyTemplate(key)} style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:14,padding:20,cursor:"pointer",textAlign:"left",color:"#e2e8f0",transition:"all 0.25s"}}
                   onMouseEnter={e=>{e.currentTarget.style.background="rgba(255,255,255,0.06)";e.currentTarget.style.borderColor="rgba(245,158,11,0.3)";}}
@@ -472,7 +472,7 @@ export default function App() {
             </div>
 
             {/* Stats */}
-            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,marginBottom:22}}>
+            <div className="ds-stats" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:10,marginBottom:22}}>
               {[{l:"WEEK",v:isPro?`${weekAvg}%`:"—",c:"#3b82f6"},{l:"STREAK",v:isPro?(streak>0?`${streak}d`:"—"):"—",c:"#f59e0b"},{l:"HABITS",v:habits.length,c:"#a78bfa"}].map(s=>(
                 <div key={s.l} style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.05)",borderRadius:11,padding:"12px",textAlign:"center",position:"relative",overflow:"hidden"}}>
                   <div style={{...mc(),fontSize:9,letterSpacing:"1.5px",marginBottom:3}}>{s.l}</div>
@@ -485,7 +485,7 @@ export default function App() {
             </div>
 
             {/* TWO COLUMNS */}
-            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:20}}>
+            <div className="ds-two-col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:20}}>
               {/* LEFT: HABITS */}
               <div>
                 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
@@ -510,7 +510,7 @@ export default function App() {
                 </div>
 
                 <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:12,overflow:"hidden"}}>
-                  <div style={{display:"grid",gridTemplateColumns:"minmax(90px,1fr) repeat(7,32px)",padding:"8px 10px",borderBottom:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.02)",gap:2}}>
+                  <div className="ds-habit-grid" style={{display:"grid",gridTemplateColumns:"minmax(90px,1fr) repeat(7,32px)",padding:"8px 10px",borderBottom:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.02)",gap:2}}>
                     <div/>
                     {weekDates.map((d,i)=>{
                       const k=dk(d);const isToday=k===todayKey;const isActive=k===selectedDayKey;const locked=isFreeAndLocked(k);
@@ -523,7 +523,7 @@ export default function App() {
                   </div>
                   {habits.length===0?(<div style={{padding:"24px",textAlign:"center",color:"#475569",fontSize:13}}>Add habits or pick a template</div>
                   ):habits.map((h,idx)=>(
-                    <div key={h.id} style={{display:"grid",gridTemplateColumns:"minmax(90px,1fr) repeat(7,32px)",padding:"6px 10px",alignItems:"center",borderBottom:idx<habits.length-1?"1px solid rgba(255,255,255,0.03)":"none",background:idx%2?"rgba(255,255,255,0.01)":"transparent",gap:2}}>
+                    <div key={h.id} className="ds-habit-grid" style={{display:"grid",gridTemplateColumns:"minmax(90px,1fr) repeat(7,32px)",padding:"6px 10px",alignItems:"center",borderBottom:idx<habits.length-1?"1px solid rgba(255,255,255,0.03)":"none",background:idx%2?"rgba(255,255,255,0.01)":"transparent",gap:2}}>
                       <div style={{display:"flex",alignItems:"center",gap:4,minWidth:0}}>
                         {editingHabit===h.id?(<input value={editHabitText} onChange={e=>setEditHabitText(e.target.value)} autoFocus
                           onKeyDown={e=>{if(e.key==="Enter"){const n=editHabitText.trim();if(n)setHabits(p=>p.map(x=>x.id===h.id?{...x,name:n}:x));setEditingHabit(null);}if(e.key==="Escape")setEditingHabit(null);}}
@@ -547,7 +547,7 @@ export default function App() {
                     </div>
                   ))}
                   {habits.length>0&&(
-                    <div style={{display:"grid",gridTemplateColumns:"minmax(90px,1fr) repeat(7,32px)",padding:"10px 10px",borderTop:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.02)",gap:2}}>
+                    <div className="ds-habit-grid" style={{display:"grid",gridTemplateColumns:"minmax(90px,1fr) repeat(7,32px)",padding:"10px 10px",borderTop:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.02)",gap:2}}>
                       <div style={{...mc(),fontSize:9,letterSpacing:"1px"}}>DAILY %</div>
                       {weekDates.map((d,i)=>{const k=dk(d);const pct=getDayPct(k);const locked=isFreeAndLocked(k);
                         const c=pct>=100?"#f59e0b":pct>=75?"#10b981":pct>=50?"#3b82f6":pct>=25?"#a78bfa":"#334155";
@@ -566,7 +566,7 @@ export default function App() {
                 <div style={{marginBottom:10}}>
                   <h2 style={{...mc(),fontSize:11,fontWeight:600,letterSpacing:"1.5px",textTransform:"uppercase",margin:0}}>☑ Tasks — {selectedDate.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"})}</h2>
                 </div>
-                <div style={{display:"flex",gap:6,marginBottom:12,flexWrap:"wrap"}}>
+                <div className="ds-day-pills" style={{display:"flex",gap:6,marginBottom:12,flexWrap:"wrap"}}>
                   {weekDates.map((d,i)=>{
                     const k=dk(d);const isToday=k===todayKey;const isActive=k===selectedDayKey;const locked=isFreeAndLocked(k);
                     const ct=(tasks[k]||[]).length;const cd=(tasks[k]||[]).filter(t=>t.done).length;
@@ -634,6 +634,27 @@ export default function App() {
         button:active{transform:scale(0.97)!important}
         input::placeholder{color:#475569}
         ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:3px}
+        .ds-two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+        .ds-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:22px}
+        .ds-habit-grid{display:grid;grid-template-columns:minmax(90px,1fr) repeat(7,32px);gap:2px}
+        .ds-templates{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+        .ds-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px}
+        .ds-compare-row{display:grid;grid-template-columns:1fr 1fr 1fr}
+        .ds-day-pills{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+        @media(max-width:700px){
+          .ds-two-col{grid-template-columns:1fr!important}
+          .ds-habit-grid{grid-template-columns:minmax(70px,1fr) repeat(7,28px)!important;padding:6px 8px!important}
+          .ds-templates{grid-template-columns:1fr 1fr!important}
+          .ds-features{grid-template-columns:1fr 1fr!important}
+          .ds-day-pills{gap:4px}
+          .ds-day-pills button{min-width:36px!important;padding:6px 7px!important}
+        }
+        @media(max-width:480px){
+          .ds-templates{grid-template-columns:1fr!important}
+          .ds-features{grid-template-columns:1fr!important}
+          .ds-habit-grid{grid-template-columns:minmax(60px,1fr) repeat(7,26px)!important;padding:5px 6px!important;font-size:10px}
+          .ds-compare-row{grid-template-columns:1fr 1fr 1fr}
+        }
       `}</style>
     </div>
   );
