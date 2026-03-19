@@ -23,26 +23,18 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBx-0_s-T1znSA-afgpz0oygBgmbruzs6U",
-    authDomain: "dailystack-2dfcd.firebaseapp.com",
-    projectId: "dailystack-2dfcd",
-    storageBucket: "dailystack-2dfcd.firebasestorage.app",
-    messagingSenderId: "187833837980",
-    appId: "1:187833837980:web:f84a4813b0c83dac5cc059",
-    measurementId: "G-7QVBZ387G3"
+  apiKey: "AIzaSyBx-0_s-T1znSA-afgpz0oygBgmbruzs6U",
+  authDomain: "dailystack-2dfcd.firebaseapp.com",
+  projectId: "dailystack-2dfcd",
+  storageBucket: "dailystack-2dfcd.firebasestorage.app",
+  messagingSenderId: "187833837980",
+  appId: "1:187833837980:web:f84a4813b0c83dac5cc059",
+  measurementId: "G-7QVBZ387G3"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "YOUR_APP_ID",
-};
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
