@@ -4,9 +4,8 @@
   "private": true,
   "description": "DailyStack — Track habits. Crush tasks. Fill the meter every day.",
   "scripts": {
-    "dev": "react-scripts start",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "GENERATE_SOURCEMAP=false react-scripts build"
   },
   "dependencies": {
     "firebase": "^10.14.0",
