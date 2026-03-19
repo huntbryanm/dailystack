@@ -133,7 +133,7 @@ function UpgradeModal({onClose, onValidate, validating, error}) {
           <p style={{...mc("#64748b"),fontSize:12,margin:0}}>$1.99/month · Cancel anytime</p>
         </div>
         <div style={{display:"flex",flexDirection:"column",gap:10,marginBottom:24}}>
-          {["Full weekly calendar with history","Sync across all your devices","Sign in with Google or Apple","Streak tracking and stats",
+          {["Full weekly calendar with history","Sync across all your devices","Sign in with Google","Streak tracking and stats",
             "Unlimited habits and tasks","All 6 starter templates"].map((f,i)=>(
             <div key={i} style={{display:"flex",alignItems:"center",gap:10,fontSize:14,color:"#cbd5e1"}}>
               <span style={{color:"#22c55e",fontSize:16}}>✓</span>{f}
@@ -208,7 +208,7 @@ function Landing({onStart, onUpgrade, isPro, user, onSignIn, onSignOut}) {
         </h1>
         <p style={{fontSize:"clamp(16px,2.2vw,20px)",color:"#94a3b8",maxWidth:580,lineHeight:1.6,margin:"0 0 40px",fontWeight:300,...t(0.5)}}>
           Daily habits keep you consistent. One-off tasks keep you productive.
-          DailyStack combines both into one 100% meter. Sign in with Google or Apple — your data syncs everywhere.
+          DailyStack combines both into one 100% meter. Sign in with Google — your data syncs everywhere.
         </p>
         <div style={{display:"flex",gap:14,flexWrap:"wrap",justifyContent:"center",...t(0.65)}}>
           <button onClick={onStart} style={{background:"linear-gradient(135deg,#f59e0b,#d97706)",border:"none",color:"#000",padding:"14px 32px",borderRadius:10,cursor:"pointer",fontSize:16,fontWeight:700,fontFamily:"'Outfit',sans-serif",boxShadow:"0 4px 24px rgba(245,158,11,0.3)"}}
@@ -226,7 +226,7 @@ function Landing({onStart, onUpgrade, isPro, user, onSignIn, onSignOut}) {
             <div style={{padding:"16px 20px",textAlign:"center",borderLeft:"1px solid rgba(255,255,255,0.06)"}}><div style={{fontSize:14,fontWeight:700,color:"#94a3b8"}}>Free</div><div style={{...mc("#475569"),fontSize:11}}>$0</div></div>
             <div style={{padding:"16px 20px",textAlign:"center",borderLeft:"1px solid rgba(255,255,255,0.06)",background:"rgba(245,158,11,0.04)"}}><div style={{fontSize:14,fontWeight:700,color:"#f59e0b"}}>Pro</div><div style={{...mc("#f59e0b"),fontSize:11}}>$1.99/month</div></div>
           </div>
-          {[["Today preview","✓","✓"],["All 6 templates","✓","✓"],["Google & Apple sign-in","—","✓"],["Sync across devices","—","✓"],["Weekly calendar","—","✓"],["One-off tasks","—","✓"],["Streaks & stats","—","✓"]].map(([f,fr,pr],i)=>(
+          {[["Today preview","✓","✓"],["All 6 templates","✓","✓"],["Google sign-in","—","✓"],["Sync across devices","—","✓"],["Weekly calendar","—","✓"],["One-off tasks","—","✓"],["Streaks & stats","—","✓"]].map(([f,fr,pr],i)=>(
             <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",borderBottom:i<6?"1px solid rgba(255,255,255,0.04)":"none"}}>
               <div style={{padding:"12px 20px",fontSize:13,color:"#94a3b8"}}>{f}</div>
               <div style={{padding:"12px 20px",textAlign:"center",fontSize:13,color:fr==="✓"?"#64748b":"#334155",borderLeft:"1px solid rgba(255,255,255,0.04)"}}>{fr}</div>
@@ -236,7 +236,7 @@ function Landing({onStart, onUpgrade, isPro, user, onSignIn, onSignOut}) {
         </div>
       </div>
       <div className="ds-features" style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:1,background:"rgba(255,255,255,0.04)",borderTop:"1px solid rgba(255,255,255,0.06)",position:"relative",zIndex:2}}>
-        {[{icon:"◉",title:"100% Meter",desc:"Habits AND tasks feed one progress bar per day"},{icon:"⟳",title:"Daily Habits",desc:"Recurring activities that repeat every day automatically"},{icon:"☑",title:"One-Off Tasks",desc:"Add tasks to specific days and cross them off when done"},{icon:"☁",title:"Any Device",desc:"Sign in with Google or Apple — your data syncs across phone, tablet, and desktop"}].map((f,i)=>(
+        {[{icon:"◉",title:"100% Meter",desc:"Habits AND tasks feed one progress bar per day"},{icon:"⟳",title:"Daily Habits",desc:"Recurring activities that repeat every day automatically"},{icon:"☑",title:"One-Off Tasks",desc:"Add tasks to specific days and cross them off when done"},{icon:"☁",title:"Any Device",desc:"Sign in with Google — your data syncs across phone, tablet, and desktop"}].map((f,i)=>(
           <div key={i} style={{padding:"32px 28px",background:"rgba(7,9,15,0.8)",...t(1.0+i*0.1)}}>
             <div style={{fontSize:22,marginBottom:10,color:"#f59e0b"}}>{f.icon}</div>
             <div style={{fontWeight:700,fontSize:15,marginBottom:6}}>{f.title}</div>
@@ -415,7 +415,7 @@ export default function App() {
           <div style={{background:"rgba(245,158,11,0.06)",border:"1px solid rgba(245,158,11,0.15)",borderRadius:12,padding:"14px 20px",marginBottom:18,display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:10}}>
             <div>
               <div style={{fontWeight:700,fontSize:14,color:"#fbbf24",marginBottom:2}}>Free Preview — Today Only</div>
-              <div style={{fontSize:12,color:"#94a3b8"}}>Progress won't be saved. Go Pro to sync across all your devices with Google or Apple sign-in.</div>
+              <div style={{fontSize:12,color:"#94a3b8"}}>Progress won't be saved. Go Pro to sync across all your devices with Google sign-in.</div>
             </div>
             <button onClick={openUpgrade} style={{background:"linear-gradient(135deg,#f59e0b,#d97706)",border:"none",color:"#000",padding:"8px 20px",borderRadius:8,cursor:"pointer",fontWeight:700,fontSize:13,fontFamily:"'Outfit',sans-serif",whiteSpace:"nowrap",flexShrink:0}}>Go Pro — $1.99/mo</button>
           </div>
