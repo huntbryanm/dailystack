@@ -12,7 +12,7 @@ import {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃  REPLACE WITH YOUR GUMROAD PRODUCT PERMALINK     ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-const GUMROAD_URL = "https://yourname.gumroad.com/l/dailystack-pro";
+const GUMROAD_URL = "https://bryanhunt.gumroad.com/l/jhcnu";
 
 const TEMPLATES = {
   student: { label: "Student", emoji: "📚", desc: "Stay on top of classes, study habits, and self-care",
