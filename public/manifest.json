@@ -1,0 +1,21 @@
+{
+  "short_name": "DailyStack",
+  "name": "DailyStack — Habit & Task Tracker",
+  "description": "Track habits. Crush tasks. Fill the meter every day.",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#07090f",
+  "background_color": "#07090f",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
