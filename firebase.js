@@ -15,12 +15,13 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "PASTE_YOURS",
-  authDomain: "PASTE_YOURS",
-  projectId: "PASTE_YOURS",
-  storageBucket: "PASTE_YOURS",
-  messagingSenderId: "PASTE_YOURS",
-  appId: "PASTE_YOURS",
+  apiKey: "AIzaSyBx-0_s-T1znSA-afgpz0oygBgmbruzs6U",
+  authDomain: "dailystack-2dfcd.firebaseapp.com",
+  projectId: "dailystack-2dfcd",
+  storageBucket: "dailystack-2dfcd.firebasestorage.app",
+  messagingSenderId: "187833837980",
+  appId: "1:187833837980:web:f84a4813b0c83dac5cc059",
+  measurementId: "G-7QVBZ387G3",
 };
 
 const app = initializeApp(firebaseConfig);
