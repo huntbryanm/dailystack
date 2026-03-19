@@ -14,14 +14,6 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBx-0_s-T1znSA-afgpz0oygBgmbruzs6U",
   authDomain: "dailystack-2dfcd.firebaseapp.com",
@@ -29,12 +21,8 @@ const firebaseConfig = {
   storageBucket: "dailystack-2dfcd.firebasestorage.app",
   messagingSenderId: "187833837980",
   appId: "1:187833837980:web:f84a4813b0c83dac5cc059",
-  measurementId: "G-7QVBZ387G3"
+  measurementId: "G-7QVBZ387G3",
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
